@@ -3,7 +3,6 @@ import speech_recognition as sr
 def recognize():
     r = sr.Recognizer()
     with sr.Microphone() as source:
-        print("무엇을 도와 드릴까요?")
         audio = r.listen(source)
 
     try: 
