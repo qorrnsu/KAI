@@ -1,3 +1,4 @@
 *.mp3
 *.pickle
 __pycache__
+.DS_Store
