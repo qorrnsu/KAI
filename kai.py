@@ -36,7 +36,11 @@ def main():
         play_file()
 
         # Listen
+        print("Listening...")
         sentence = recognizer.recognize()
+
+        # Processing
+        print("Processing...")
         if sentence[0]:
             # answer = dialogflow.ask(sentence[1])
             confidence = classifier.getProbability(

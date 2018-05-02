@@ -7,7 +7,7 @@ def recognize():
 
     try: 
         sentence = r.recognize_google(audio, language="ko-KR")
-        print('You said: %s' % sentence)
+        # print('You said: %s' % sentence)
         return (True, sentence)
     except sr.RequestError:
         return (False, "인터넷을 다시 연결해 주세요")
