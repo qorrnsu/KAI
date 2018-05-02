@@ -1,5 +1,2 @@
-Korean artificial intelligence assistant with speech input and output.
-Run with python 3
-
-Dependencies:
-SpeechRecognition
+# KAIVA
+Korean Artificial Intelligent Voice Agent
