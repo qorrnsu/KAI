@@ -1,5 +1,12 @@
 import translator, recognizer, tts, time, vlc
 from intent_recognition import IntentClassifier
+from weather_korea import ask_weather
+
+# Create classifier
+classifier = IntentClassifier()
+
+# Features
+features = {'weather': ask_weather}
 
 def play_file():
     p = vlc.MediaPlayer("output.mp3")
@@ -9,10 +16,16 @@ def play_file():
         time.sleep(1)
 
 def trainAI():
-    classifier = IntentClassifier()
     classifier.train()
     classifier.save("k_classifier.pickle")
+    print(classifier.test())
     print('Trained classifier')
+
+def testAI():
+    while True:
+        text = input("Test utterance: ")
+        print(classifier.classify(text))
+
 
 def main():
     classifier = IntentClassifier.load("k_classifier.pickle")
@@ -28,17 +41,22 @@ def main():
             # answer = dialogflow.ask(sentence[1])
             confidence = classifier.getProbability(
                 sentence[1], classifier.classify(sentence[1]))
-            print("Confidence: ", confidence)
-            if confidence > 0.21: # confidence boundary
-                answer = classifier.response(sentence[1])
+            intention = classifier.classify(sentence[1])
+
+            # FEATURES
+            if intention in features:
+                answer = features[intention]()
+            # CONVERSATION
+            elif confidence > 0.21: # confidence boundary
+                response = classifier.response(sentence[1])
+                answer = response
+            # NO ANSWER
             else:
                 answer = "잘 모르겠어요"
 
-            # print(answer[1])
             if(tts.speak(answer)):
                 play_file()
         else:
-            # print(sentence[1])
             if(tts.speak(sentence[1])):
                 play_file()
 
@@ -46,5 +64,6 @@ def main():
     # print('Translation: %s' % translated) #DEBUG
 
 if __name__ == "__main__":
-    trainAI()
+    # trainAI()
+    # testAI()
     main()

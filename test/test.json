@@ -41,16 +41,20 @@
             "intent": "bored"
         },
         {
-            "utterance": "잠이 안와",
+            "utterance": "잠이 안 와",
             "intent": "can_not_sleep"
         },
         {
             "utterance": "잘자",
             "intent": "goodnight"
         },
-	{
+	    {
             "utterance": "좋은 아침",
             "intent": "goodmorning"
+        },
+        {
+            "utterance": "날씨 어때",
+            "intent": "weather"
         }
     ]
 }
