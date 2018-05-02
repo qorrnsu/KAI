@@ -1,0 +1,60 @@
+{
+    "tests": [
+        {
+            "utterance": "안녕",
+            "intent": "hello"
+        },
+        {
+            "utterance": "넌 누구야",
+            "intent": "acquaintance"
+        },
+        {
+            "utterance": "넌 어디서 왔니",
+            "intent": "origin"
+        },
+        {
+            "utterance": "넌 몇살이야",
+            "intent": "age"
+        },
+        {
+            "utterance": "넌 생일이 언제야",
+            "intent": "birth"
+        },
+        {
+            "utterance": "어떻게 지냈어",
+            "intent": "how_are_you"
+        },
+	{
+            "utterance": "너 별로야",
+            "intent": "bad"
+        },
+        {
+            "utterance": "너무 똑똑해",
+            "intent": "good"
+        },
+        {
+            "utterance": "너무 슬퍼",
+            "intent": "sad"
+        },
+        {
+            "utterance": "너무 지루해",
+            "intent": "bored"
+        },
+        {
+            "utterance": "잠이 안 와",
+            "intent": "can_not_sleep"
+        },
+        {
+            "utterance": "잘자",
+            "intent": "goodnight"
+        },
+	    {
+            "utterance": "좋은 아침",
+            "intent": "goodmorning"
+        },
+        {
+            "utterance": "날씨 어때",
+            "intent": "weather"
+        }
+    ]
+}
