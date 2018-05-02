@@ -64,6 +64,6 @@ def main():
     # print('Translation: %s' % translated) #DEBUG
 
 if __name__ == "__main__":
-    # trainAI()
+    trainAI()
     # testAI()
     main()
