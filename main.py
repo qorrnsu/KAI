@@ -85,10 +85,10 @@ def main():
         else:
             answer = "잘 모르겠어요"
 
-        if(tts.speak(answer)):
+        if tts.speak(answer):
             play_file()
     else:
-        if(tts.speak(sentence[1])):
+        if tts.speak(sentence[1]):
             play_file()
 
     # Turn back on hotword detector
