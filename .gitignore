@@ -2,3 +2,5 @@
 *.pickle
 __pycache__
 .DS_Store
+snowboydetect.py
+*.so
