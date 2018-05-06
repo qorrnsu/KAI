@@ -4,7 +4,7 @@
 import snowboydecoder, signal
 
 interrupted = False
-sensitivity = 0.6
+sensitivity = 0.5
 model = 'KAIVA.pmdl'
 detector = snowboydecoder.HotwordDetector(model, sensitivity=sensitivity)
 
@@ -52,6 +52,7 @@ def testAI():
         print(classifier.classify(text))
 
 def loadAI():
+    global classifier 
     classifier = IntentClassifier.load("k_classifier.pickle")
 
 def main():
@@ -98,9 +99,10 @@ def main():
     # print('Translation: %s' % translated) #DEBUG
 
 if __name__ == "__main__":
-    trainAI()
-    # testAI()
+#    trainAI()
     loadAI()
+#    testAI()
 
     listen()
+#    main()
 

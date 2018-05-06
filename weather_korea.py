@@ -14,7 +14,7 @@ req = urllib.request.Request(URL)
 def ask_weather():
     try:
         res = urllib.request.urlopen(req).read()
-        data = json.loads(res)
+        data = json.loads(res.decode('utf-8'))
 
         temp = str(int(data['main']['temp']))
         w = '현재 날씨는 %s °C 입니다. ' % temp  
@@ -39,7 +39,8 @@ def ask_weather():
         else:
             status = default
         w += "%s 것으로 예상 됩니다." % status
-    except:
+    except Exception as e:
+        print(e)
         w = "죄송합니다 시스템에 문제가 있습니다." 
 
     return w
